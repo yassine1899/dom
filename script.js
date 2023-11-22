@@ -42,5 +42,13 @@ for (const heart of BtnHeart) {
 for (const trash of BtnTrash) {
   trash.addEventListener("click", function () {
     trash.parentElement.parentElement.parentElement.remove();
+    let qtite = document.getElementsByClassName("qte");
+    let price = document.getElementsByClassName("unit-price");
+    let Total = document.querySelector(".total-parice");
+    let sum = 0;
+    for (let i = 0; i < qtite.length; i++) {
+      sum = sum + Number(qtite[i].textContent) * Number(price[i].textContent);
+    }
+    Total.textContent = sum;
   });
 }
